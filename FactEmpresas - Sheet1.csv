@@ -1,0 +1,11 @@
+ID,Nombre,Tipo,IDMujer,IDCargo
+123,Globant,Global Company,1,1
+124,TCS,Global Company,2,5
+125,Sabre,Global Company,3,1
+126,d-Local,Global Company,4,2
+127,Overactive,Global Company,5,3
+128,Wabbi,Start up,6,4
+129,Tienda Inglesa,Global Company,7,6
+200,Nimacloud,Start up,8,7
+201,Mercado Libre,Start up,9,10
+202,SparkDigital,Start up,10,9

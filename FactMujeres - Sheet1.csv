@@ -1,0 +1,11 @@
+ID,Nombre,Apellido,DNI,Profesion,IDCargo,IDTecnologia
+NULL,Virginia,Lombardi,46288064,iOS Developer,1,1
+NULL,Lucia,Perez,54568907,Systems Engineering,5,8
+NULL,Mariana ,Orman,33458065,iOS Developer,1,1
+NULL,Lorena,Alvarez,56789073,Java Developer,2,6
+NULL,Alicia,Gonzalez,45678753,Python Developer,3,10
+NULL,Martina,Bernardi,56873219,Android Developer,4,2
+NULL,Isabel,Vayra,34623786,Web UI Developer,6,3
+NULL,Micaela,Nelson,56784325,Web UI Developer,7,5
+NULL,Susana,Mori,34868063,C Developer,10,8
+NULL,Natalia,Bonjour,65433456,C++ Developer,9,7
