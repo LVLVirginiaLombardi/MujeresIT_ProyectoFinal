@@ -134,3 +134,17 @@ MujeresIT.DimTecnologias,
 MujeresIT.FactMujeres
 WHERE
 FactMujeres.IDTecnologia = DimTecnologias.ID;
+
+#FUNCTION
+
+#PARA EL DESAFÍO DE CREAR UNA FUNCIÓN:
+/*un período inicial y uno final devolver conteo de cuantas mujeresit entraron
+crear view adic para traer fecha con concat y cast*/
+
+CREATE VIEW 
+vista_traer_fecha
+AS SELECT CAST(CONCAT(Anio, '-', Mes, '-', Dia) AS DATE) AS Fecha,
+IDMujerIt
+FROM 
+MujeresIT.FactPeriodos;
+
