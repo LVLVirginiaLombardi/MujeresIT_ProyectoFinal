@@ -17,7 +17,6 @@ VALUES(CURRENT_DATE(), CURRENT_TIME(), USER(), NEW.ID, NEW.Nombre, NEW.Apellido,
 #INSERTAMOS VALORES EN LA TABLA FactMujeres
 INSERT INTO MujeresIT.FactMujeres (Nombre, Apellido, DNI, Profesion, IDCargo, IDTecnologia)
 VALUES('Siri', 'Altez', 43211285, 'iOS Developer', 2, 1);
-USE MujeresIT;
 
 
 #SECOND TRIGGER
