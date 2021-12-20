@@ -43,7 +43,8 @@ CREATE TABLE IF NOT EXISTS FactPeriodos(
                                     FOREIGN KEY (IDMujerIt) REFERENCES FactMujeres(ID));
                                     
                                     
-#POPULATION OF THE TABLES                                    
+#POPULATION OF THE TABLES  
+                                  
 INSERT INTO MujeresIT.DimCargos (ID, Seniority)
 VALUES (NULL,'Trainee'), (NULL, 'Junior'), (NULL, 'Junior Advanced'), (NULL, 'Semi Senior'), (NULL, 'Senior'), 
 (NULL, 'Senior Advanced'), (NULL, 'Senior Level One'), (NULL, 'Senior Level Two'), (NULL, 'Senior Level Three'), (NULL, 'Senior Level Four');
@@ -71,6 +72,7 @@ VALUES (NULL, 18, 1, 2021, 123, 10), (NULL, 20, 2, 2019, 125, 2), (NULL, 23, 12,
 
 
 #CREATION OF VIEWS
+
 #FIRST VIEW
 CREATE VIEW 
 vista_profesion_mujeresit
@@ -88,23 +90,29 @@ FactMujeres.IDCargo = DimCargos.ID;
 CREATE VIEW 
 vista_ingreso_mujeresit_en_empresait
 AS SELECT
-FactMujeres.nombre,
-FactMujeres.apellido,
-FactPeriodos.dia,
-FactPeriodos.mes,
-FactPeriodos.anio
+FactMujeres.nombre AS Nombre_Mujer_IT,
+FactMujeres.apellido AS Apellido,
+FactPeriodos.dia AS Dia,
+FactPeriodos.mes AS Mes,
+FactPeriodos.anio AS Anio,
+FactEmpresas.nombre AS Empresa
 FROM
 MujeresIT.FactMujeres,
-MujeresIT.FactPeriodos
+MujeresIT.FactPeriodos,
+MujeresIT.FactEmpresas
 WHERE
-FactPeriodos.IDMujerIT = FactMujeres.ID;
+FactPeriodos.IDMujerIT = FactMujeres.ID
+AND FactEmpresas.IDMujer = FactMujeres.ID
+ORDER BY anio DESC;
 #THIRD VIEW
 CREATE VIEW 
 vista_mujeresit_trabajan_empresa
 AS SELECT
-FactMujeres.apellido,
-FactMujeres.profesion,
-FactEmpresas.nombre
+FactMujeres.nombre AS Nombre,
+FactMujeres.apellido AS Apellido,
+FactMujeres.profesion AS Profesion,
+FactEmpresas.nombre AS Empresa,
+FactEmpresas.tipo AS Tipo_Empresa
 FROM
 MujeresIT.FactMujeres,
 MujeresIT.FactEmpresas
@@ -114,9 +122,10 @@ FactEmpresas.IDMujer = FactMujeres.ID;
 CREATE VIEW
 vista_mujeresit_saben_tecnologias
 AS SELECT
-FactMujeres.apellido,
-DimTecnologias.nombre,
-DimTecnologias.tipo
+FactMujeres.nombre AS Nombre,
+FactMujeres.apellido AS Apellido,
+DimTecnologias.nombre AS Tencologia,
+DimTecnologias.tipo AS Tipo_Tecnologia
 FROM
 MujeresIT.DimTecnologias,
 MujeresIT.FactMujeres
@@ -124,19 +133,20 @@ WHERE
 FactMujeres.IDTecnologia = DimTecnologias.ID;
 #FIFTH VIEW
 CREATE VIEW
-vista_profesion_nombre_de_tecnologia_de_mujeresit
+vista_profesion_tecnologia_iOS_de_mujeresit
 AS SELECT
-FactMujeres.apellido,
-FactMujeres.profesion,
-DimTecnologias.nombre
+FactMujeres.nombre AS Nombre,
+FactMujeres.apellido AS Apellido,
+FactMujeres.profesion AS Profesion,
+DimTecnologias.nombre AS Tecnologia
 FROM
 MujeresIT.DimTecnologias,
 MujeresIT.FactMujeres
 WHERE
-FactMujeres.IDTecnologia = DimTecnologias.ID;
+FactMujeres.IDTecnologia = DimTecnologias.ID
+AND DimTecnologias.nombre = 'iOS';
 
 #FUNCTION
-
 #PARA EL DESAFÍO DE CREAR UNA FUNCIÓN:
 /*un período inicial y uno final devolver conteo de cuantas mujeresit entraron
 crear view adic para traer fecha con concat y cast*/
