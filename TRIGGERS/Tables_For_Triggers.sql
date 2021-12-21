@@ -15,6 +15,16 @@ CREATE TABLE MujeresIT.adiciones_mujeres_general(
     Profesion VARCHAR(255),
     Tipo_operacion VARCHAR(255));
 
+CREATE TABLE MujeresIT.eliminaciones_mujeres_general(
+	ID_eliminacion INT AUTO_INCREMENT PRIMARY KEY,
+    Fecha DATE NOT NULL,
+    Hora TIME NOT NULL,
+    Usuario_ID VARCHAR(255) NOT NULL,
+    ID INT,
+    Nombre VARCHAR(255),
+    Apellido VARCHAR(255),
+    Profesion VARCHAR(255),
+    Tipo_operacion VARCHAR(255));
 
 CREATE TABLE MujeresIT.eliminaciones_tecnologias_general(
 	ID_eliminacion INT AUTO_INCREMENT PRIMARY KEY,
@@ -26,4 +36,12 @@ CREATE TABLE MujeresIT.eliminaciones_tecnologias_general(
     Tipo VARCHAR(255),
     Tipo_operacion VARCHAR(255));
     
-	
+CREATE TABLE MujeresIT.agregaciones_tecnologias_general(
+	ID_eliminacion INT AUTO_INCREMENT PRIMARY KEY,
+    Fecha DATE NOT NULL,
+    Hora TIME NOT NULL,
+    Usuario_ID VARCHAR(255) NOT NULL,
+    ID INT,
+    Nombre VARCHAR(255),
+    Tipo VARCHAR(255),
+    Tipo_operacion VARCHAR(255));
