@@ -57,7 +57,7 @@ DELETE FROM MujeresIT.DimTecnologias
 WHERE ID = 2;
 
 #SECOND TRIGGER FOR DimTecnologias:
-/*Este script lo que hace es crear un trigger llamado Aft_Ins_Tecnologias,
+/*Este script lo que hace es crear un trigger llamado Aft_Ins_Tecnologia,
 lo que hace es que después de la inserción en la tabla DimTecnologias se va a aplicar
 por cada fila insertar en la tabla agregaciones_tecnologias_general (creada en Tables_For_Triggers) 
 los datos pasados: Fecha, Hora Usuario_ID, ID, Nombre, Tipo y Tipo_operacion.
