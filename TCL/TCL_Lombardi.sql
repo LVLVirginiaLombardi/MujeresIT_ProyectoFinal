@@ -5,7 +5,7 @@ registros, controladas por transacciones. */
 /* En la primera tabla, si tiene registros, deberás eliminar algunos de ellos iniciando previamente una transacción. 
 Si no tiene registros la tabla, reemplaza eliminación por inserción.
 Deja en una línea siguiente, comentado la sentencia Rollback, y en una línea posterior, la sentencia Commit.
-Si eliminas registros importantes, deja comenzado las sentencias para re-insertarlos. */
+Si eliminas registros importantes, deja comentado las sentencias para re-insertarlos. */
 
 #Comenzamos con un START TRANSACTION
 START TRANSACTION;
@@ -31,7 +31,7 @@ START TRANSACTION;
 	FROM MujeresIT.DimCargos
 	ORDER BY ID;
 
-# HACEMOS UN ROLLBACK QUE DEJAMOS COMENTADO COMO LO PIDE LA CONSIGNA Y EL COMMIT
+# HACEMOS UN ROLLBACK QUE DEJAMOS COMENTADO COMO LO PIDE LA CONSIGNA Y AL IGUAL QUE EL COMMIT
 #ROLLBACK;
 #COMMIT;
 
