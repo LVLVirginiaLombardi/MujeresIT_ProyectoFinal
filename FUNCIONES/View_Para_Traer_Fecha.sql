@@ -4,4 +4,4 @@ vista_traer_fecha
 AS SELECT CAST(CONCAT(Anio, '-', Mes, '-', Dia) AS DATE) AS Fecha,
 IDMujerIt
 FROM 
-MujeresIT.FactPeriodos;  
+mujeres_it.FactPeriodos;  

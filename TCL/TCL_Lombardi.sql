@@ -10,25 +10,28 @@ Si eliminas registros importantes, deja comentado las sentencias para re-inserta
 #Comenzamos con un START TRANSACTION
 START TRANSACTION;
 
+#PARA NO TENER PROBLEMAS CON LAS FK Y SE PUEDA REALIZAR LA ELIMINACIÓN SIN PROBLEMAS UTILIZAMOS:
+SET FOREIGN_KEY_CHECKS=0;
+
 #TABLA A ELEGIR DimCargos, REALIZAMOS LA ELIMINACIÓN DE ALGUNOS DATOS DE LA MISMA
-	DELETE FROM MujeresIT.DimCargos
+	DELETE FROM mujeres_it.DimCargos
 	WHERE ID = 2; 
 
-	DELETE FROM MujeresIT.DimCargos
+	DELETE FROM mujeres_it.DimCargos
 	WHERE ID = 4;
 
-	DELETE FROM MujeresIT.DimCargos
+	DELETE FROM mujeres_it.DimCargos
 	WHERE ID = 6;
 
-	DELETE FROM MujeresIT.DimCargos
+	DELETE FROM mujeres_it.DimCargos
 	WHERE ID = 8; 
 
-	DELETE FROM MujeresIT.DimCargos
+	DELETE FROM mujeres_it.DimCargos
 	WHERE ID = 10; 
 
 #NOS FIJAMOS QUE ESTÉN EFECTIVAMENTE ELIMINADOS LOS DATOS CON LA SIGUIENTE SENTENCIA
 	SELECT *
-	FROM MujeresIT.DimCargos
+	FROM mujeres_it.DimCargos
 	ORDER BY ID;
 
 # HACEMOS UN ROLLBACK QUE DEJAMOS COMENTADO COMO LO PIDE LA CONSIGNA Y AL IGUAL QUE EL COMMIT
@@ -46,15 +49,15 @@ Agrega en una línea comentada la sentencia de eliminación del savepoint de los
 START TRANSACTION;
 
 #TABLA A ELEGIR DimTecnologias, REALIZAMOS LA INSERCIÓN DE 8 NUEVOS REGISTROS 
-	INSERT INTO MujeresIT.DimTecnologias (ID, Nombre, Tipo)
+	INSERT INTO mujeres_it.DimTecnologias (ID, Nombre, Tipo)
 	VALUES (NULL, 'Angular', 'Web UI'), (NULL, 'NodeJS', 'Web UI'), (NULL, 'Laravel', 'Web UI'), (NULL, 'CSS', 'Web UI');
 SAVEPOINT numero_cuatro;
-	INSERT INTO MujeresIT.DimTecnologias (ID, Nombre, Tipo)
+	INSERT INTO mujeres_it.DimTecnologias (ID, Nombre, Tipo)
     VALUES (NULL, 'HTML', 'Web UI'), (NULL, 'MySQL', 'Programming'), (NULL, 'Salesforce', 'Programming'), (NULL, 'C#', 'Programming');
 SAVEPOINT numero_ocho;
 
 #HACEMOS UNA CONSULTA A LA TABLA PARA VER LOS REGISTROS
-SELECT * FROM MujeresIT.DimTecnologias;
+SELECT * FROM mujeres_it.DimTecnologias;
 
 #SENTENCIA DE ELIMINACIÓN DEL SAVEPOINT DE LOS PRIMEROS 4 REGISTROS INSERTADOS
 #RELEASE SAVEPOINT numero_cuatro;

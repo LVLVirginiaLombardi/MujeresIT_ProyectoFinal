@@ -5,9 +5,9 @@ SELECT DATABASE();
 SELECT VERSION();
 
 #PRIMERAS DOS TABLAS
-/* Se crea Tabla MujeresIT.adiciones_mujeres_general.
+/* Se crea Tabla mujeres_it.adiciones_mujeres_general.
 Se selecciona la Tabla `FactMujeres`. */
-CREATE TABLE MujeresIT.adiciones_mujeres_general(
+CREATE TABLE mujeres_it.adiciones_mujeres_general(
 	ID_adicion INT AUTO_INCREMENT PRIMARY KEY,
     Fecha DATE NOT NULL,
     Hora TIME NOT NULL,
@@ -18,9 +18,9 @@ CREATE TABLE MujeresIT.adiciones_mujeres_general(
     Profesion VARCHAR(255),
     Tipo_operacion VARCHAR(255));
 
-/* Se crea Tabla MujeresIT.eliminaciones_mujeres_general.
+/* Se crea Tabla mujeres_it.eliminaciones_mujeres_general.
 Se selecciona la Tabla `FactMujeres`. */
-CREATE TABLE MujeresIT.eliminaciones_mujeres_general(
+CREATE TABLE mujeres_it.eliminaciones_mujeres_general(
 	ID_eliminacion INT AUTO_INCREMENT PRIMARY KEY,
     Fecha DATE NOT NULL,
     Hora TIME NOT NULL,
@@ -35,9 +35,9 @@ CREATE TABLE MujeresIT.eliminaciones_mujeres_general(
 ###############################################################################
 
 #SEGUNDAS DOS TABLAS
-/* Se crea MujeresIT.eliminaciones_tecnologias_general.
+/* Se crea mujeres_it.eliminaciones_tecnologias_general.
 Se selecciona la Tabla `DimTecnologias`. */
-CREATE TABLE MujeresIT.eliminaciones_tecnologias_general(
+CREATE TABLE mujeres_it.eliminaciones_tecnologias_general(
 	ID_eliminacion INT AUTO_INCREMENT PRIMARY KEY,
     Fecha DATE NOT NULL,
     Hora TIME NOT NULL,
@@ -47,9 +47,9 @@ CREATE TABLE MujeresIT.eliminaciones_tecnologias_general(
     Tipo VARCHAR(255),
     Tipo_operacion VARCHAR(255));
 
-/* Se crea MujeresIT.agregaciones_tecnologias_general.
+/* Se crea mujeres_it.agregaciones_tecnologias_general.
 Se selecciona la Tabla `DimTecnologias`. */
-CREATE TABLE MujeresIT.agregaciones_tecnologias_general(
+CREATE TABLE mujeres_it.agregaciones_tecnologias_general(
 	ID_eliminacion INT AUTO_INCREMENT PRIMARY KEY,
     Fecha DATE NOT NULL,
     Hora TIME NOT NULL,

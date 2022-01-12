@@ -12,8 +12,8 @@ FactMujeres.apellido,
 FactMujeres.profesion,
 DimCargos.seniority
 FROM
-MujeresIT.DimCargos,
-MujeresIT.FactMujeres
+mujeres_it.DimCargos,
+mujeres_it.FactMujeres
 WHERE
 FactMujeres.IDCargo = DimCargos.ID;
 
@@ -33,9 +33,9 @@ FactPeriodos.mes AS Mes,
 FactPeriodos.anio AS Anio,
 FactEmpresas.nombre AS Empresa
 FROM
-MujeresIT.FactMujeres,
-MujeresIT.FactPeriodos,
-MujeresIT.FactEmpresas
+mujeres_it.FactMujeres,
+mujeres_it.FactPeriodos,
+mujeres_it.FactEmpresas
 WHERE
 FactPeriodos.IDMujerIT = FactMujeres.ID
 AND FactEmpresas.IDMujer = FactMujeres.ID
@@ -56,8 +56,8 @@ FactMujeres.profesion AS Profesion,
 FactEmpresas.nombre AS Empresa,
 FactEmpresas.tipo AS Tipo_Empresa
 FROM
-MujeresIT.FactMujeres,
-MujeresIT.FactEmpresas
+mujeres_it.FactMujeres,
+mujeres_it.FactEmpresas
 WHERE
 FactEmpresas.IDMujer = FactMujeres.ID;
 
@@ -74,8 +74,8 @@ FactMujeres.apellido AS Apellido,
 DimTecnologias.nombre AS Tencologia,
 DimTecnologias.tipo AS Tipo_Tecnologia
 FROM
-MujeresIT.DimTecnologias,
-MujeresIT.FactMujeres
+mujeres_it.DimTecnologias,
+mujeres_it.FactMujeres
 WHERE
 FactMujeres.IDTecnologia = DimTecnologias.ID;
 
@@ -93,8 +93,8 @@ FactMujeres.apellido AS Apellido,
 FactMujeres.profesion AS Profesion,
 DimTecnologias.nombre AS Tecnologia
 FROM
-MujeresIT.DimTecnologias,
-MujeresIT.FactMujeres
+mujeres_it.DimTecnologias,
+mujeres_it.FactMujeres
 WHERE
 FactMujeres.IDTecnologia = DimTecnologias.ID
 AND DimTecnologias.nombre = 'iOS';

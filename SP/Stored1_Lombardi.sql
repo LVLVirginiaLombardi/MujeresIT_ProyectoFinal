@@ -13,7 +13,7 @@ BEGIN
 		SET @tipo = '';
 	END IF;
 #SETEO DE LA TABLA A ORDENAR, Y PROCEDIMIENTOS NECESARIOS PARA QUE SE EJECUTE EL SP.
-	SET @clausula = CONCAT('SELECT * FROM MujeresIT.FactMujeres ', @ordenar, @tipo);
+	SET @clausula = CONCAT('SELECT * FROM mujeres_it.FactMujeres ', @ordenar, @tipo);
     PREPARE ejecutarSQL FROM @clausula;
     EXECUTE ejecutarSQL;
     DEALLOCATE PREPARE ejecutarSQL;

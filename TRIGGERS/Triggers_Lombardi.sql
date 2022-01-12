@@ -1,7 +1,7 @@
 /*Los Triggers a crear deberán controlar la acción previo a la operación elegida (BEFORE), 
 y una acción posterior a otra operación elegida (AFTER).*/
 
-USE MujeresIT;
+USE mujeres_it;
 
 #FIRST TRIGGER FOR FactMujeres:
 /*Este script lo que hace es crear un trigger llamado Aft_Ins_MujerIt,
@@ -15,7 +15,7 @@ INSERT INTO `adiciones_mujeres_general` (Fecha, Hora, Usuario_ID, ID, Nombre, Ap
 VALUES(CURRENT_DATE(), CURRENT_TIME(), USER(), NEW.ID, NEW.Nombre, NEW.Apellido, NEW.Profesion, 'INSERT');
 
 #INSERTAMOS VALORES EN LA TABLA FactMujeres
-INSERT INTO MujeresIT.FactMujeres (Nombre, Apellido, DNI, Profesion, IDCargo, IDTecnologia)
+INSERT INTO mujeres_it.FactMujeres (Nombre, Apellido, DNI, Profesion, IDCargo, IDTecnologia)
 VALUES('Siri', 'Altez', 43211285, 'iOS Developer', 2, 1);
 
 #SECOND TRIGGER FOR FactMujeres:
@@ -34,7 +34,7 @@ VALUES(CURRENT_DATE(), CURRENT_TIME(), USER(), OLD.ID, OLD.Nombre, OLD.Apellido,
 #USAMOS ESTO PARA NO OBTENER PROBLEMAS CON LA ELIMINACIÓN DEL ID
 SET FOREIGN_KEY_CHECKS=0;
 #BORRAMOS UNA FILA DE LA TABLA DimTecnologias DONDE EL ID ES DIEZ
-DELETE FROM MujeresIT.FactMujeres
+DELETE FROM mujeres_it.FactMujeres
 WHERE ID = 10;
 
 ######################################################################################################################
@@ -53,7 +53,7 @@ VALUES(CURRENT_DATE(), CURRENT_TIME(), USER(), OLD.ID, OLD.Nombre, OLD.Tipo, 'DE
 #USAMOS ESTO PARA NO OBTENER PROBLEMAS CON LA ELIMINACIÓN DEL ID
 SET FOREIGN_KEY_CHECKS=0;
 #BORRAMOS UNA FILA DE LA TABLA DimTecnologias DONDE EL ID ES DOS
-DELETE FROM MujeresIT.DimTecnologias
+DELETE FROM mujeres_it.DimTecnologias
 WHERE ID = 2;
 
 #SECOND TRIGGER FOR DimTecnologias:
@@ -68,7 +68,7 @@ INSERT INTO `agregaciones_tecnologias_general` (Fecha, Hora, Usuario_ID, ID, Nom
 VALUES(CURRENT_DATE(), CURRENT_TIME(), USER(), NEW.ID, NEW.Nombre, NEW.Tipo, 'INSERT');
 
 #INSERTAMOS VALORES EN LA TABLA DimTecnologias
-INSERT INTO MujeresIT.DimTecnologias (Nombre, Tipo)
+INSERT INTO mujeres_it.DimTecnologias (Nombre, Tipo)
 VALUES('Angular', 'Web UI');
 
 
