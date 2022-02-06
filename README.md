@@ -11,3 +11,9 @@ debe contener los links de las publicaciones.
 
 Archivos .sql con todo lo requerido para la segunda entrega.
 
+* ENTREGA FINAL:
+
+Archivos .sql arreglados y ubicados cada uno en su correspondiente carpeta.
+Se agrega carpeta para el archivo principal que contiene la creación del Schema, las Tablas y las Inserciones de Registros.
+Se agrega carpeta para el PDF final.
+
