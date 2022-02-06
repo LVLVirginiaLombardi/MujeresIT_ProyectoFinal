@@ -1,3 +1,4 @@
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` FUNCTION `Conteo_Mujeres_en_IT_en_tecnologia_tipo`(Tipo VARCHAR(255)) RETURNS int
     READS SQL DATA
 BEGIN
@@ -8,4 +9,5 @@ BEGIN
                 ON DimTecnologias.ID = FactMujeres.IDTecnologia
                 WHERE DimTecnologias.tipo = Tipo);
 	RETURN Conteo;
-END
+END$$
+DELIMITER ;

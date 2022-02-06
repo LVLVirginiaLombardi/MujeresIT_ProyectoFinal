@@ -1,4 +1,4 @@
-#CREATION OF SCHEMA MujeresIT and Use of it.
+#CREATION OF SCHEMA mujeres_it and Use of it.
 CREATE SCHEMA IF NOT EXISTS mujeres_it;
 
 USE mujeres_it;

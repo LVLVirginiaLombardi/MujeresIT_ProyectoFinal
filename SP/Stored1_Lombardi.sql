@@ -1,3 +1,4 @@
+DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `Ordenamiento sobre Tabla FactMujeres`(IN campo VARCHAR(255), IN tipo_ordenamiento ENUM('ASC', 'DESC'))
 BEGIN
 #VALIDACIÓN CAMPO, SI EL USUARIO INGRESA ALGO QUE ORDENE, SI NO QUE LO DEJE VACÍO
@@ -17,4 +18,6 @@ BEGIN
     PREPARE ejecutarSQL FROM @clausula;
     EXECUTE ejecutarSQL;
     DEALLOCATE PREPARE ejecutarSQL;
-END
+END$$
+DELIMITER ;
+
